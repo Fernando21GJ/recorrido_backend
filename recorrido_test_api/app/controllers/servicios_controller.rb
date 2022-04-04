@@ -8,6 +8,7 @@ class ServiciosController < ApplicationController
     render json: @servicios
   end
 
+  
   # GET /servicios/1
   def show
     render json: @servicio
