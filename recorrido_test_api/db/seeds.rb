@@ -1,0 +1,1 @@
+servicio = Servicio.create([{ tipo_servicio: "Monitoreo Recorrido.cl"}])
