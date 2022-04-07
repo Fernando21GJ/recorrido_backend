@@ -21,8 +21,8 @@ development: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch('DB_USERNAME', 'recorrido-test') %>
-  password: <%= ENV.fetch('DB_PASSWORD', 'recorrido-data') %>
+  username: <%= ENV.fetch('DB_USERNAME', 'recorrido_test') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'recorrido_data') %>
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
   port: <%= ENV.fetch('DB_PORT', '5432') %>
 
