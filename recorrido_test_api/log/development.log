@@ -37,3 +37,198 @@ Processing by ServiciosController#index as HTML
 Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 5.0ms | Allocations: 6714)
 
 
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "recorrido_test_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "recorrido_test_test" ENCODING = 'unicode'[0m
+  [1m[35m (134.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (101.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (11.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateServicios (20220403041522)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (115.2ms)[0m  [1m[35mCREATE TABLE "servicios" ("id" bigserial primary key, "tipo_servicio" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220403041522"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-04-05 01:21:07.562161"], ["updated_at", "2022-04-05 01:21:07.562161"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServicio Create (5.3ms)[0m  [1m[32mINSERT INTO "servicios" ("tipo_servicio", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tipo_servicio", "Monitoreo Recorrido.cl"], ["created_at", "2022-04-05 01:21:07.991518"], ["updated_at", "2022-04-05 01:21:07.991518"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2022-04-04 20:25:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (15.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fernandogaona25/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fernandogaona25/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 67.5ms | Allocations: 588)
+Completed 200 OK in 303ms (Views: 150.4ms | ActiveRecord: 0.0ms | Allocations: 4359)
+
+
+Started GET "/servicios" for 127.0.0.1 at 2022-04-04 20:25:43 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (26.9ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 151ms (Views: 29.4ms | ActiveRecord: 113.2ms | Allocations: 5119)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-04-04 20:25:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/servicios" for 127.0.0.1 at 2022-04-04 20:43:55 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (0.8ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 45ms (Views: 45.1ms | ActiveRecord: 10.8ms | Allocations: 3303)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldToServicios (20220405015208)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.0ms)[0m  [1m[35mALTER TABLE "servicios" ADD "completed" boolean[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220405015208"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/servicios" for 127.0.0.1 at 2022-04-04 20:52:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (1.6ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 11.5ms | ActiveRecord: 7.4ms | Allocations: 7247)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2683526650545454035)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mServicio Load (0.7ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mServicio Load (0.8ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServicio Create (0.8ms)[0m  [1m[32mINSERT INTO "servicios" ("tipo_servicio", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tipo_servicio", "Monitoreo Recorrido.cl"], ["created_at", "2022-04-05 01:55:31.920907"], ["updated_at", "2022-04-05 01:55:31.920907"], ["completed", false]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mServicio Create (0.4ms)[0m  [1m[32mINSERT INTO "servicios" ("tipo_servicio", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tipo_servicio", "Monitoreo UPS"], ["created_at", "2022-04-05 01:55:31.933136"], ["updated_at", "2022-04-05 01:55:31.933136"], ["completed", true]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/servicios" for 127.0.0.1 at 2022-04-04 20:55:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (1.3ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 15.5ms | ActiveRecord: 6.3ms | Allocations: 7421)
+
+
+Started GET "/servicios" for 127.0.0.1 at 2022-04-04 21:52:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (10.6ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 212ms (Views: 32.8ms | ActiveRecord: 22.8ms | Allocations: 7428)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-04-04 21:52:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-04-05 10:54:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (36.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fernandogaona25/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fernandogaona25/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 63.0ms | Allocations: 483)
+Completed 200 OK in 350ms (Views: 94.8ms | ActiveRecord: 0.0ms | Allocations: 3048)
+
+
+Started GET "/servicios" for ::1 at 2022-04-05 10:54:48 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (2.6ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 48ms (Views: 16.4ms | ActiveRecord: 11.7ms | Allocations: 5827)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-04-05 10:54:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/servicios" for ::1 at 2022-04-05 13:59:58 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (0.9ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 11.1ms | Allocations: 3483)
+
+
+Started GET "/servicios" for ::1 at 2022-04-05 14:43:19 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (1.1ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 11.7ms | Allocations: 3226)
+
+
+Started GET "/servicios" for ::1 at 2022-04-05 14:43:20 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (0.4ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 974)
+
+
+Started GET "/servicios" for ::1 at 2022-04-05 17:28:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (1.0ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 10.3ms | ActiveRecord: 8.0ms | Allocations: 7421)
+
+
+Started POST "/servicios" for ::1 at 2022-04-05 17:31:36 -0500
+Processing by ServiciosController#create as HTML
+  Parameters: {"tipo_servicio"=>"comiida rapida", "servicio"=>{"tipo_servicio"=>"comiida rapida"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/servicios_controller.rb:21:in `create'
+  [1m[36mServicio Create (250.6ms)[0m  [1m[32mINSERT INTO "servicios" ("tipo_servicio", "created_at", "updated_at", "completed") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tipo_servicio", "comiida rapida"], ["created_at", "2022-04-05 22:31:36.140082"], ["updated_at", "2022-04-05 22:31:36.140082"], ["completed", nil]]
+  ↳ app/controllers/servicios_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/servicios_controller.rb:21:in `create'
+Completed 201 Created in 283ms (Views: 1.1ms | ActiveRecord: 264.3ms | Allocations: 2891)
+
+
+Started GET "/servicios" for ::1 at 2022-04-05 17:31:36 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (0.4ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 1073)
+
+
+Started GET "/servicios" for ::1 at 2022-04-05 17:31:46 -0500
+Processing by ServiciosController#index as HTML
+  [1m[36mServicio Load (0.5ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios"[0m
+  ↳ app/controllers/servicios_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1058)
+
+
+Started DELETE "/servicios/1" for ::1 at 2022-04-05 17:32:28 -0500
+Processing by ServiciosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mServicio Load (0.5ms)[0m  [1m[34mSELECT "servicios".* FROM "servicios" WHERE "servicios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/servicios_controller.rb:45:in `set_servicio'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/servicios_controller.rb:39:in `destroy'
+  [1m[36mServicio Destroy (0.4ms)[0m  [1m[31mDELETE FROM "servicios" WHERE "servicios"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/servicios_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/servicios_controller.rb:39:in `destroy'
+Completed 204 No Content in 67ms (ActiveRecord: 2.7ms | Allocations: 3824)
+
+
